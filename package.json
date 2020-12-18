@@ -11,10 +11,12 @@
     },
     "dependencies": {
         "react": "^17.0.1",
-        "react-dom": "^17.0.1"
+        "react-dom": "^17.0.1",
+        "styled-components": "^5.2.1"
     },
     "devDependencies": {
         "@types/react": "^17.0.0",
+        "@types/styled-components": "^5.1.6",
         "@yarnpkg/pnpify": "^2.4.0",
         "enzyme": "^3.11.0",
         "enzyme-adapter-react-16": "^1.15.5",
@@ -39,6 +41,9 @@
     },
     "lint-staged": {
         "**/*": "prettier --write --ignore-unknown"
+    },
+    "resolutions": {
+        "styled-components": "^5"
     },
     "jest": {
         "setupFilesAfterEnv": [
