@@ -2,6 +2,9 @@ const path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default
+const styledComponentsTransformer = createStyledComponentsTransformer()
+
 module.exports = {
     entry: './docs/app.tsx',
     mode: 'development',
@@ -9,8 +12,13 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: 'ts-loader',
                 exclude: /node_modules/,
+                use: {
+                    loader: 'ts-loader',
+                    options: {
+                        getCustomTransformers: () => ({ before: [styledComponentsTransformer] }),
+                    },
+                },
             },
         ],
     },

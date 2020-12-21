@@ -1,8 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import BasisLayout from './layouts/BasisLayout'
 
-const Root = () => {
-    return <div>首页</div>
-}
-
-ReactDOM.render(<Root />, document.getElementById('root'))
+ReactDOM.render(<BasisLayout />, document.getElementById('root'))
